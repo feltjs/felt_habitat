@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>@fuz.dev/template</title>
+	<title>@feltjs/habitat</title>
 </svelte:head>
 
 <svelte:body
