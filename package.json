@@ -1,11 +1,11 @@
 {
   "name": "@feltjs/habitat",
   "license": "Unlicense",
-  "description": "a static web app and Node library template with TypeScript, Svelte, SvelteKit, Vite, esbuild, Fuz, and Gro",
+  "description": "Felt habitat",
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://template.fuz.dev/",
-  "repository": "https://github.com/fuz-dev/template",
+  "homepage": "https://habitat.felt.dev/",
+  "repository": "https://github.com/feltjs/habitat",
   "engines": {
     "node": ">=20.5"
   },

@@ -1,28 +1,9 @@
 <script lang="ts">
-	import Alert from '@fuz.dev/fuz/Alert.svelte';
-	import {base} from '$app/paths';
-
-	import Header from '$routes/Header.svelte';
-	import Mreows from '$routes/Mreows.svelte';
-
-	let mreows: Array<{icon: string}> | undefined;
+	//
 </script>
 
 <main class="prose">
-	<section class="box">
-		<Header />
-		<Alert>
-			<span slot="icon"
-				>{#if mreows}{mreows[0].icon}{:else}✨{/if}</span
-			><span
-				>hello, welcome to <a href="https://github.com/fuz-dev/template">@feltjs/habitat</a></span
-			>
-		</Alert>
-		<p>
-			here's an <a href="{base}/route">example route</a>
-		</p>
-	</section>
-	<Mreows bind:mreows />
+	<a href="https://github.com/feltjs/habitat">github.com/feltjs/habitat</a>
 </main>
 
 <style>
