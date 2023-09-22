@@ -1,7 +1,7 @@
 {
   "name": "@feltjs/felt-habitat",
   "license": "Unlicense",
-  "description": "Felt habitat",
+  "description": "a proof-of-concept Svelte component for a collaborative simulated habitat using Felt ",
   "version": "0.0.1",
   "type": "module",
   "homepage": "https://habitat.felt.dev/",
