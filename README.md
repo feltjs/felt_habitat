@@ -1,4 +1,4 @@
-# @feltjs/habitat
+# @feltjs/felt-habitat
 
 > [habitat.felt.dev](https://habitat.felt.dev/)
 

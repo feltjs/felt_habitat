@@ -1,11 +1,11 @@
 {
-  "name": "@feltjs/habitat",
+  "name": "@feltjs/felt-habitat",
   "license": "Unlicense",
   "description": "Felt habitat",
   "version": "0.0.1",
   "type": "module",
   "homepage": "https://habitat.felt.dev/",
-  "repository": "https://github.com/feltjs/habitat",
+  "repository": "https://github.com/feltjs/felt-habitat",
   "engines": {
     "node": ">=20.5"
   },

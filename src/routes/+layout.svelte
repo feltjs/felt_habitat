@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>@feltjs/habitat</title>
+	<title>@feltjs/felt-habitat</title>
 </svelte:head>
 
 <svelte:body

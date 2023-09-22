@@ -275,7 +275,7 @@
 				</label>
 			</fieldset>
 			<footer class="box">
-				<a href="https://github.com/feltjs/habitat">source code</a>
+				<a href="https://github.com/feltjs/felt-habitat">source code</a>
 				<Breadcrumbs>🌵</Breadcrumbs>
 			</footer>
 		</form>
