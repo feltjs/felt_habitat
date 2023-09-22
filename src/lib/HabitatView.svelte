@@ -11,13 +11,8 @@
 	import EmojiMenu from '$lib/EmojiMenu.svelte';
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
-	const treeEmojis = [
-		{content: '🌲', tags: ['nature', 'plant', 'tree']},
-		{content: '🌳', tags: ['nature', 'plant', 'tree']},
-		{content: '🌴', tags: ['nature', 'plant', 'tree']},
-		{content: '🌵', tags: ['nature', 'plant', 'tree']},
-	];
-	const selected_tree_emojis = writable(treeEmojis.slice(0, 2));
+	const tree_emojis = ['🌲', '🌳', '🌴', '🌵'];
+	const selected_tree_emojis = writable(tree_emojis.slice(0, 2));
 	// const flowerEmojis = emoji.emoji.filter((e) => e.tags.includes('flower'));
 
 	let innerWidth = 0; // account for any scrollbar
@@ -80,7 +75,7 @@
 
 	$: running = interval !== null;
 
-	$: habitat.trees = $selected_tree_emojis.map((s) => s.content);
+	$: habitat.trees = $selected_tree_emojis;
 
 	// TODO better pattern than this? the problem is we want to handle messages.
 	// could be done with an optional param like `post = true`,
@@ -181,7 +176,7 @@
 		style:height={vertical ? habitat_height + 'px' : '100%'}
 	>
 		<form style:max-width="{controls_min_width}px">
-			<EmojiMenu emojis={treeEmojis} selected_emojis={selected_tree_emojis} />
+			<EmojiMenu emojis={tree_emojis} selected_emojis={selected_tree_emojis} />
 			<!-- <EmojiMenu emojis={flowerEmojis} /> -->
 			<div class="turn">turn {$turn}</div>
 			<fieldset class="row">

@@ -1,5 +1,4 @@
-import {get, writable} from 'svelte/store';
-import type {Writable} from 'svelte/store';
+import {get, writable, type Writable} from 'svelte/store';
 import {create_random_alea} from '@grogarden/util/random_alea.js';
 
 // TODO edit properties of each tile directly (change type, wetness, etc)

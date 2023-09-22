@@ -1,12 +1,10 @@
 <script lang="ts">
 	import type {Writable} from 'svelte/store';
 
-	import type {Emoji} from '$lib/emoji';
+	export let emojis: string[];
+	export let selected_emojis: Writable<string[]>;
 
-	export let emojis: Emoji[];
-	export let selected_emojis: Writable<Emoji[]>;
-
-	const toggle_emoji = (emoji: Emoji) => {
+	const toggle_emoji = (emoji: string) => {
 		$selected_emojis = $selected_emojis.includes(emoji)
 			? $selected_emojis.filter((e) => e !== emoji)
 			: $selected_emojis.concat(emoji);
@@ -14,13 +12,13 @@
 </script>
 
 <fieldset>
-	{#each emojis as emoji (emoji.content)}
+	{#each emojis as emoji (emoji)}
 		<button
 			type="button"
 			class:selected={$selected_emojis.includes(emoji)}
 			on:click={() => toggle_emoji(emoji)}
 		>
-			{emoji.content}
+			{emoji}
 		</button>
 	{/each}
 </fieldset>
