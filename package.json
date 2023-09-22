@@ -7,7 +7,7 @@
   "homepage": "https://habitat.felt.dev/",
   "repository": "https://github.com/feltjs/felt-habitat",
   "engines": {
-    "node": ">=20.5"
+    "node": ">=20.7"
   },
   "scripts": {
     "start": "gro dev",
