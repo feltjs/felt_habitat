@@ -8,11 +8,15 @@
 	import Habitat from '$lib/Habitat.svelte';
 	import {create_island_habitat_state, simulate_island_habitat} from '$lib/island';
 	import {HabitatWorld, type HabitatMessage, type SetStateHabitatMessage} from '$lib/habitat';
-	import emoji from '$lib/emoji.json';
 	import EmojiMenu from '$lib/EmojiMenu.svelte';
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
-	const treeEmojis = emoji.emoji.filter((e) => e.tags.includes('tree'));
+	const treeEmojis = [
+		{content: '🌲', tags: ['nature', 'plant', 'tree']},
+		{content: '🌳', tags: ['nature', 'plant', 'tree']},
+		{content: '🌴', tags: ['nature', 'plant', 'tree']},
+		{content: '🌵', tags: ['nature', 'plant', 'tree']},
+	];
 	const selected_tree_emojis = writable(treeEmojis.slice(0, 2));
 	// const flowerEmojis = emoji.emoji.filter((e) => e.tags.includes('flower'));
 
