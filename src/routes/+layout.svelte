@@ -7,12 +7,18 @@
 	import Dialog from '@fuz.dev/fuz/Dialog.svelte';
 	import Contextmenu from '@fuz.dev/fuz/Contextmenu.svelte';
 	import {createContextmenu} from '@fuz.dev/fuz/contextmenu.js';
+	import {sync_color_scheme} from '@fuz.dev/fuz/theme.js';
+	import {writable} from 'svelte/store';
 
 	import Settings from '$routes/Settings.svelte';
 
 	const contextmenu = createContextmenu();
 
 	let showSettings = false;
+
+	// TODO improve this API, simplify to set dark mode as the default
+	const selected_color_scheme = writable('dark' as const);
+	sync_color_scheme($selected_color_scheme); // TODO probably shouldn't be needed
 </script>
 
 <svelte:head>
@@ -38,7 +44,7 @@
 	]}
 />
 
-<Themed>
+<Themed {selected_color_scheme} color_scheme_fallback="dark">
 	<slot />
 	<Contextmenu {contextmenu} />
 	{#if showSettings}
