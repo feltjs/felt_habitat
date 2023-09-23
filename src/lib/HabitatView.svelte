@@ -308,6 +308,7 @@
 		overflow: hidden;
 		display: flex;
 		align-items: center;
+		justify-content: flex-end;
 		flex: 1;
 	}
 	.controls {
