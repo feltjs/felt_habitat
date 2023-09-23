@@ -9,7 +9,6 @@
 	import {create_island_habitat_state, simulate_island_habitat} from '$lib/island';
 	import {HabitatWorld, type HabitatMessage, type SetStateHabitatMessage} from '$lib/habitat';
 	import EmojiMenu from '$lib/EmojiMenu.svelte';
-	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	const tree_emojis = ['🌲', '🌳', '🌴', '🌵'];
 	const selected_tree_emojis = writable(tree_emojis.slice(0, 2));
@@ -274,8 +273,10 @@
 				</label>
 			</fieldset>
 			<footer class="box">
-				<a href="https://github.com/feltjs/felt-habitat">source code</a>
-				<Breadcrumbs>🌵</Breadcrumbs>
+				<a href="https://github.com/feltjs/felt-habitat" class="box"
+					><div>source code</div>
+					<div style:font-size="var(--icon_size_md)">🌵</div></a
+				>
 			</footer>
 		</form>
 	</div>
