@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {writable} from 'svelte/store';
-	import FeltWindowTenant from '@fuz.dev/fuz/FeltWindowTenant.svelte';
+	import FeltWindowTenant from '@fuz.dev/fuz_library/FeltWindowTenant.svelte';
 	import {UnreachableError} from '@grogarden/util/error.js';
 	import {browser} from '$app/environment';
 	import {random_int} from '@grogarden/util/random.js';
@@ -99,11 +99,11 @@
 				habitat.reset();
 				break;
 			}
-			case 'habitat.nextTurn': {
+			case 'habitat.next_turn': {
 				habitat.simulate();
 				break;
 			}
-			case 'habitat.updateState': {
+			case 'habitat.update_state': {
 				const {value} = message;
 				if (value.tiles_wide !== undefined) tiles_wide = value.tiles_wide;
 				if (value.tiles_tall !== undefined) tiles_tall = value.tiles_tall;
@@ -128,20 +128,20 @@
 				? parseFloat(e.target.value)
 				: e.target.value;
 			const value = Number.isNaN(parsed) ? e.target.value : parsed;
-			handle_and_post_message({type: 'habitat.updateState', value: {[key]: value}});
+			handle_and_post_message({type: 'habitat.update_state', value: {[key]: value}});
 		};
 	const on_mumber_input =
 		(key: keyof SetStateHabitatMessage['value']) =>
 		(e: any): void => {
 			handle_and_post_message({
-				type: 'habitat.updateState',
+				type: 'habitat.update_state',
 				value: {[key]: Number(e.target.value)},
 			});
 		};
 	const on_checkbox =
 		(key: keyof SetStateHabitatMessage['value']) =>
 		(e: any): void => {
-			handle_and_post_message({type: 'habitat.updateState', value: {[key]: e.target.checked}});
+			handle_and_post_message({type: 'habitat.update_state', value: {[key]: e.target.checked}});
 		};
 
 	const random_seed = () => {
@@ -182,7 +182,7 @@
 				<button type="button" on:click={() => toggle()} style:flex="1">
 					{#if running}pause{:else}play{/if}
 				</button>
-				<button type="button" on:click={() => handle_and_post_message({type: 'habitat.nextTurn'})}>
+				<button type="button" on:click={() => handle_and_post_message({type: 'habitat.next_turn'})}>
 					tick
 				</button>
 				<button type="button" on:click={() => handle_and_post_message({type: 'habitat.reset'})}>
@@ -205,7 +205,7 @@
 				<button
 					type="button"
 					on:click={() =>
-						handle_and_post_message({type: 'habitat.updateState', value: {seed: random_seed()}})}
+						handle_and_post_message({type: 'habitat.update_state', value: {seed: random_seed()}})}
 				>
 					randomize
 				</button>

@@ -116,10 +116,10 @@ export interface ResetHabitatMessage {
 	type: 'habitat.reset';
 }
 export interface NextTurnHabitatMessage {
-	type: 'habitat.nextTurn';
+	type: 'habitat.next_turn';
 }
 export interface SetStateHabitatMessage {
-	type: 'habitat.updateState';
+	type: 'habitat.update_state';
 	value: {
 		seed?: number | string;
 		tiles_wide?: number;
