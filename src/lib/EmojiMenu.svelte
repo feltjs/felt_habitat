@@ -28,7 +28,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-		margin-bottom: var(--spacing_xl);
+		margin-bottom: var(--spacing_1);
 	}
 	button {
 		background: none;

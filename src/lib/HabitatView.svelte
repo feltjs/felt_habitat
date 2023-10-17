@@ -321,7 +321,7 @@
 		padding: var(--spacing_sm);
 	}
 	.turn {
-		font-size: var(--size_xl);
+		font-size: var(--size_1);
 		text-align: center;
 	}
 	button {
@@ -334,13 +334,13 @@
 	}
 	fieldset {
 		align-items: center;
-		margin-bottom: var(--spacing_xl);
+		margin-bottom: var(--spacing_1);
 	}
 	fieldset.row label {
 		margin-bottom: 0;
 	}
 	label {
-		margin-bottom: var(--spacing_xl);
+		margin-bottom: var(--spacing_1);
 		width: 100%;
 	}
 	.seed-label {
