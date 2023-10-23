@@ -6,8 +6,8 @@
 	import {random_int} from '@grogarden/util/random.js';
 
 	import Habitat from '$lib/Habitat.svelte';
-	import {create_island_habitat_state, simulate_island_habitat} from '$lib/island';
-	import {HabitatWorld, type HabitatMessage, type SetStateHabitatMessage} from '$lib/habitat';
+	import {create_island_habitat_state, simulate_island_habitat} from '$lib/island.js';
+	import {HabitatWorld, type HabitatMessage, type SetStateHabitatMessage} from '$lib/habitat.js';
 	import EmojiMenu from '$lib/EmojiMenu.svelte';
 
 	const tree_emojis = ['🌲', '🌳', '🌴', '🌵'];

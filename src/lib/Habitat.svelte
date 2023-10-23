@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HabitatItem from '$lib/HabitatItem.svelte';
 	import HabitatTile from '$lib/HabitatTile.svelte';
-	import type {HabitatState} from '$lib/habitat';
+	import type {HabitatState} from '$lib/habitat.js';
 
 	export let state: HabitatState;
 	export let tiles_wide: number;

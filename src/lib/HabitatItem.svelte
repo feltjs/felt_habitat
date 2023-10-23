@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {HabitatItem} from '$lib/habitat';
+	import type {HabitatItem} from '$lib/habitat.js';
 
 	export let item: HabitatItem;
 	export let tile_width: number;

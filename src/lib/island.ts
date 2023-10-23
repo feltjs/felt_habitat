@@ -9,8 +9,8 @@ import type {
 	HabitatWorld,
 	CreateHabitatState,
 	SimulateHabitat,
-} from '$lib/habitat';
-import {is_in_bounds, is_bordering} from '$lib/grid';
+} from '$lib/habitat.js';
+import {is_in_bounds, is_bordering} from '$lib/grid.js';
 
 /*
 
