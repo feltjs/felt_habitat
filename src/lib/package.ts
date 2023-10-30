@@ -4,11 +4,12 @@ import type {PackageJson} from '@grogarden/gro/package_json.js';
 
 export const package_json = {
 	name: '@feltjs/felt_habitat',
-	icon: '🌵',
-	license: 'Unlicense',
 	description:
 		'a proof-of-concept Svelte component for collaborative simulated habitats using Felt',
 	version: '0.0.1',
+	public: true,
+	icon: '🌵',
+	license: 'Unlicense',
 	type: 'module',
 	homepage: 'https://habitat.felt.dev/',
 	repository: 'https://github.com/feltjs/felt_habitat',
