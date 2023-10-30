@@ -1,6 +1,7 @@
 <script lang="ts">
 	import {writable} from 'svelte/store';
-	import FeltWindowTenant from '@fuz.dev/fuz_library/FeltWindowTenant.svelte';
+	// TODO BLOCK what package?
+	import FeltWindowTenant from '@feltjs/felt_window/FeltWindowTenant.svelte';
 	import {UnreachableError} from '@grogarden/util/error.js';
 	import {browser} from '$app/environment';
 	import {random_int} from '@grogarden/util/random.js';
