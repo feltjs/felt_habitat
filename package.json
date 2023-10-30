@@ -1,12 +1,13 @@
 {
-  "name": "@feltjs/felt-habitat",
-  "icon": "🌵",
-  "license": "Unlicense",
+  "name": "@feltjs/felt_habitat",
   "description": "a proof-of-concept Svelte component for collaborative simulated habitats using Felt",
   "version": "0.0.1",
+  "public": true,
+  "icon": "🌵",
+  "license": "Unlicense",
   "type": "module",
   "homepage": "https://habitat.felt.dev/",
-  "repository": "https://github.com/feltjs/felt-habitat",
+  "repository": "https://github.com/feltjs/felt_habitat",
   "engines": {
     "node": ">=20.7"
   },
@@ -104,6 +105,10 @@
     "./package.gen.js": {
       "default": "./dist/package.gen.js",
       "types": "./dist/package.gen.d.ts"
+    },
+    "./package.js": {
+      "default": "./dist/package.js",
+      "types": "./dist/package.d.ts"
     },
     "./tile.js": {
       "default": "./dist/tile.js",

@@ -3,7 +3,7 @@
 import type {PackageJson} from '@grogarden/gro/package_json.js';
 
 export const package_json = {
-	name: '@feltjs/felt-habitat',
+	name: '@feltjs/felt_habitat',
 	icon: '🌵',
 	license: 'Unlicense',
 	description:
@@ -11,7 +11,7 @@ export const package_json = {
 	version: '0.0.1',
 	type: 'module',
 	homepage: 'https://habitat.felt.dev/',
-	repository: 'https://github.com/feltjs/felt-habitat',
+	repository: 'https://github.com/feltjs/felt_habitat',
 	engines: {node: '>=20.7'},
 	scripts: {
 		start: 'gro dev',
@@ -82,6 +82,7 @@ export const package_json = {
 		},
 		'./island.js': {default: './dist/island.js', types: './dist/island.d.ts'},
 		'./package.gen.js': {default: './dist/package.gen.js', types: './dist/package.gen.d.ts'},
+		'./package.js': {default: './dist/package.js', types: './dist/package.d.ts'},
 		'./tile.js': {default: './dist/tile.js', types: './dist/tile.d.ts'},
 	},
 	modules: {
@@ -124,6 +125,10 @@ export const package_json = {
 			],
 		},
 		'./package.gen.js': {path: 'package.gen.ts', declarations: []},
+		'./package.js': {
+			path: 'package.ts',
+			declarations: [{name: 'package_json', kind: 'VariableDeclaration'}],
+		},
 		'./tile.js': {
 			path: 'tile.ts',
 			declarations: [{name: 'is_border_tile', kind: 'VariableDeclaration'}],

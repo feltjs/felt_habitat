@@ -273,7 +273,7 @@
 				</label>
 			</fieldset>
 			<footer class="box">
-				<a href="https://github.com/feltjs/felt-habitat" class="box"
+				<a href="https://github.com/feltjs/felt_habitat" class="box"
 					><div>source code</div>
 					<div style:font-size="var(--icon_size_md)">🌵</div></a
 				>
