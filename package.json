@@ -66,6 +66,7 @@
   "exports": {
     "./EmojiMenu.svelte": {
       "svelte": "./dist/EmojiMenu.svelte",
+      "default": "./dist/EmojiMenu.svelte",
       "types": "./dist/EmojiMenu.svelte.d.ts"
     },
     "./grid.js": {
@@ -74,6 +75,7 @@
     },
     "./Habitat.svelte": {
       "svelte": "./dist/Habitat.svelte",
+      "default": "./dist/Habitat.svelte",
       "types": "./dist/Habitat.svelte.d.ts"
     },
     "./habitat.js": {
@@ -82,19 +84,26 @@
     },
     "./HabitatItem.svelte": {
       "svelte": "./dist/HabitatItem.svelte",
+      "default": "./dist/HabitatItem.svelte",
       "types": "./dist/HabitatItem.svelte.d.ts"
     },
     "./HabitatTile.svelte": {
       "svelte": "./dist/HabitatTile.svelte",
+      "default": "./dist/HabitatTile.svelte",
       "types": "./dist/HabitatTile.svelte.d.ts"
     },
     "./HabitatView.svelte": {
       "svelte": "./dist/HabitatView.svelte",
+      "default": "./dist/HabitatView.svelte",
       "types": "./dist/HabitatView.svelte.d.ts"
     },
     "./island.js": {
       "default": "./dist/island.js",
       "types": "./dist/island.d.ts"
+    },
+    "./package.gen.js": {
+      "default": "./dist/package.gen.js",
+      "types": "./dist/package.gen.d.ts"
     },
     "./tile.js": {
       "default": "./dist/tile.js",
