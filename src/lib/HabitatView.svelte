@@ -1,11 +1,10 @@
 <script lang="ts">
 	import {writable} from 'svelte/store';
-	// TODO BLOCK what package?
-	import FeltWindowTenant from '@feltjs/felt_window/FeltWindowTenant.svelte';
 	import {UnreachableError} from '@grogarden/util/error.js';
 	import {browser} from '$app/environment';
 	import {random_int} from '@grogarden/util/random.js';
 
+	import Felt_Window_Tenant from '$lib/Felt_Window_Tenant.svelte'; // TODO extract to what package?
 	import Habitat from '$lib/Habitat.svelte';
 	import {create_island_habitat_state, simulate_island_habitat} from '$lib/island.js';
 	import {HabitatWorld, type HabitatMessage, type SetStateHabitatMessage} from '$lib/habitat.js';
@@ -282,7 +281,7 @@
 		</form>
 	</div>
 </div>
-<FeltWindowTenant
+<Felt_Window_Tenant
 	bind:post_message
 	on:message={(e) => {
 		console.log(`message from window host e`, e.detail);
