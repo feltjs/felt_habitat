@@ -3,6 +3,7 @@
 	import {UnreachableError} from '@grogarden/util/error.js';
 	import {browser} from '$app/environment';
 	import {random_int} from '@grogarden/util/random.js';
+	import {base} from '$app/paths';
 
 	import Felt_Window_Tenant from '$lib/Felt_Window_Tenant.svelte'; // TODO extract to what package?
 	import Habitat from '$lib/Habitat.svelte';
@@ -277,6 +278,7 @@
 				</label>
 			</fieldset>
 			<footer class="box">
+				<a class="chip" href="{base}/about">about</a>
 				<a href="https://github.com/feltjs/felt_habitat" class="box"
 					><div>source code</div>
 					<div style:font-size="var(--icon_size_md)">🌵</div></a
