@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {writable} from 'svelte/store';
-	import {UnreachableError} from '@grogarden/util/error.js';
+	import {Unreachable_Error} from '@grogarden/util/error.js';
 	import {browser} from '$app/environment';
 	import {random_int} from '@grogarden/util/random.js';
 	import {base} from '$app/paths';
@@ -120,7 +120,7 @@
 				break;
 			}
 			default:
-				throw new UnreachableError(message);
+				throw new Unreachable_Error(message);
 		}
 	};
 
