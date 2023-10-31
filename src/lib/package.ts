@@ -6,7 +6,7 @@ export const package_json = {
 	name: '@feltjs/felt_habitat',
 	description:
 		'a proof-of-concept Svelte component for collaborative simulated habitats using Felt',
-	version: '0.1.0',
+	version: '0.1.1',
 	public: true,
 	icon: '🌵',
 	license: 'Unlicense',
