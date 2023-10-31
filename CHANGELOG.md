@@ -1,5 +1,11 @@
 # @feltjs/felt_habitat
 
+## 0.1.2
+
+### Patch Changes
+
+- b1d7b60: upgrade deps
+
 ## 0.1.1
 
 ### Patch Changes
