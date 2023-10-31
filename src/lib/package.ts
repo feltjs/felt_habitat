@@ -23,6 +23,7 @@ export const package_json = {
 	},
 	files: ['dist'],
 	devDependencies: {
+		'@changesets/changelog-git': '^0.1.14',
 		'@feltjs/eslint-config': '^0.4.1',
 		'@fuz.dev/fuz': '^0.77.1',
 		'@fuz.dev/fuz_contextmenu': '^0.5.1',
