@@ -1,14 +1,19 @@
 <script lang="ts">
 	import {writable} from 'svelte/store';
-	import FeltWindowTenant from '@fuz.dev/fuz_library/FeltWindowTenant.svelte';
 	import {UnreachableError} from '@grogarden/util/error.js';
 	import {browser} from '$app/environment';
 	import {random_int} from '@grogarden/util/random.js';
+	import {base} from '$app/paths';
 
+	import Felt_Window_Tenant from '$lib/Felt_Window_Tenant.svelte'; // TODO extract to what package?
 	import Habitat from '$lib/Habitat.svelte';
-	import {create_island_habitat_state, simulate_island_habitat} from '$lib/island';
-	import {HabitatWorld, type HabitatMessage, type SetStateHabitatMessage} from '$lib/habitat';
-	import EmojiMenu from '$lib/EmojiMenu.svelte';
+	import {create_island_habitat_state, simulate_island_habitat} from '$lib/island.js';
+	import {
+		Habitat_World,
+		type Habitat_Message,
+		type Set_State_Habitat_Message,
+	} from '$lib/habitat.js';
+	import Emoji_Menu from '$lib/Emoji_Menu.svelte';
 
 	const tree_emojis = ['🌲', '🌳', '🌴', '🌵'];
 	const selected_tree_emojis = writable(tree_emojis.slice(0, 2));
@@ -30,7 +35,7 @@
 	const tiles_tall_max = 33;
 	$: habitat.resize(tiles_wide, tiles_tall);
 
-	const habitat = new HabitatWorld(create_island_habitat_state, simulate_island_habitat);
+	const habitat = new Habitat_World(create_island_habitat_state, simulate_island_habitat);
 	const {turn, state, reproduction, seed} = habitat;
 
 	const SEED_MIN = 0;
@@ -56,7 +61,7 @@
 	// TODO schedule a recurring clock thing
 	let interval: number | null = null;
 	const toggle = () => {
-		const message: HabitatMessage = interval ? {type: 'habitat.stop'} : {type: 'habitat.start'};
+		const message: Habitat_Message = interval ? {type: 'habitat.stop'} : {type: 'habitat.start'};
 		handle_and_post_message(message);
 	};
 	$: turn_duration, browser && (stop(), start());
@@ -80,11 +85,11 @@
 	// could be done with an optional param like `post = true`,
 	// and then pass `false` when applying a message from the host
 	let post_message: (message: any) => void;
-	const handle_and_post_message = (message: HabitatMessage): void => {
+	const handle_and_post_message = (message: Habitat_Message): void => {
 		post_message({type: 'Ephemera', params: message});
 		handle_message(message);
 	};
-	const handle_message = (message: HabitatMessage): void => {
+	const handle_message = (message: Habitat_Message): void => {
 		console.log(`updateHabitat message`, message);
 		switch (message.type) {
 			case 'habitat.start': {
@@ -120,7 +125,7 @@
 	};
 
 	const on_text_input =
-		(key: keyof SetStateHabitatMessage['value']) =>
+		(key: keyof Set_State_Habitat_Message['value']) =>
 		(e: any): void => {
 			// TODO why is this needed?
 			// eslint-disable-next-line no-useless-escape
@@ -131,7 +136,7 @@
 			handle_and_post_message({type: 'habitat.update_state', value: {[key]: value}});
 		};
 	const on_mumber_input =
-		(key: keyof SetStateHabitatMessage['value']) =>
+		(key: keyof Set_State_Habitat_Message['value']) =>
 		(e: any): void => {
 			handle_and_post_message({
 				type: 'habitat.update_state',
@@ -139,7 +144,7 @@
 			});
 		};
 	const on_checkbox =
-		(key: keyof SetStateHabitatMessage['value']) =>
+		(key: keyof Set_State_Habitat_Message['value']) =>
 		(e: any): void => {
 			handle_and_post_message({type: 'habitat.update_state', value: {[key]: e.target.checked}});
 		};
@@ -175,8 +180,8 @@
 		style:height={vertical ? habitat_height + 'px' : '100%'}
 	>
 		<form style:max-width="{controls_min_width}px">
-			<EmojiMenu emojis={tree_emojis} selected_emojis={selected_tree_emojis} />
-			<!-- <EmojiMenu emojis={flowerEmojis} /> -->
+			<Emoji_Menu emojis={tree_emojis} selected_emojis={selected_tree_emojis} />
+			<!-- <Emoji_Menu emojis={flowerEmojis} /> -->
 			<div class="turn">turn {$turn}</div>
 			<fieldset class="row">
 				<button type="button" on:click={() => toggle()} style:flex="1">
@@ -273,7 +278,8 @@
 				</label>
 			</fieldset>
 			<footer class="box">
-				<a href="https://github.com/feltjs/felt-habitat" class="box"
+				<a class="chip" href="{base}/about">about</a>
+				<a href="https://github.com/feltjs/felt_habitat" class="box"
 					><div>source code</div>
 					<div style:font-size="var(--icon_size_md)">🌵</div></a
 				>
@@ -281,7 +287,7 @@
 		</form>
 	</div>
 </div>
-<FeltWindowTenant
+<Felt_Window_Tenant
 	bind:post_message
 	on:message={(e) => {
 		console.log(`message from window host e`, e.detail);

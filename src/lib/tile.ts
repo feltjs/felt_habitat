@@ -1,4 +1,4 @@
-export const isBorderTile = (
+export const is_border_tile = (
 	x: number,
 	y: number,
 	tiles_wide: number,

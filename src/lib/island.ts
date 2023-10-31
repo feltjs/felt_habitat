@@ -3,14 +3,14 @@ import {random_float, random_int, random_item} from '@grogarden/util/random.js';
 import {get} from 'svelte/store';
 
 import type {
-	HabitatItem,
-	HabitatState,
-	HabitatTile,
-	HabitatWorld,
-	CreateHabitatState,
-	SimulateHabitat,
-} from '$lib/habitat';
-import {is_in_bounds, is_bordering} from '$lib/grid';
+	Habitat_Item,
+	Habitat_State,
+	Habitat_Tile,
+	Habitat_World,
+	Create_Habitat_State,
+	Simulate_Habitat,
+} from '$lib/habitat.js';
+import {is_in_bounds, is_bordering} from '$lib/grid.js';
 
 /*
 
@@ -28,18 +28,18 @@ const create_item_id = create_client_id_creator('item');
 const empty_probability = 0.8;
 // const living_probability = 0.83; // TODO use this as % chance to turn to dust instead of precomputing the `dust_age`
 
-export const create_island_habitat_state: CreateHabitatState = (
-	habitat: HabitatWorld,
-): HabitatState => ({
+export const create_island_habitat_state: Create_Habitat_State = (
+	habitat: Habitat_World,
+): Habitat_State => ({
 	tiles: random_habitat_tiles(habitat),
 	items: random_habitat_items(habitat),
 });
 
 // TODO not sure about these names -- seems good to externalize these behaviors
-const random_habitat_tiles = (habitat: HabitatWorld): HabitatTile[] => {
+const random_habitat_tiles = (habitat: Habitat_World): Habitat_Tile[] => {
 	const tiles_wide = get(habitat.tiles_wide);
 	const tiles_tall = get(habitat.tiles_tall);
-	const tiles: HabitatTile[] = [];
+	const tiles: Habitat_Tile[] = [];
 	let i = 0;
 	for (let y = 0; y < tiles_tall; y++) {
 		for (let x = 0; x < tiles_wide; x++) {
@@ -64,10 +64,10 @@ const random_habitat_tiles = (habitat: HabitatWorld): HabitatTile[] => {
 	return tiles;
 };
 
-const random_habitat_items = (habitat: HabitatWorld): HabitatItem[] => {
+const random_habitat_items = (habitat: Habitat_World): Habitat_Item[] => {
 	const tiles_wide = get(habitat.tiles_wide);
 	const tiles_tall = get(habitat.tiles_tall);
-	const items: HabitatItem[] = [];
+	const items: Habitat_Item[] = [];
 	for (let y = 0; y < tiles_tall; y++) {
 		for (let x = 0; x < tiles_wide; x++) {
 			// TODO mountains
@@ -84,9 +84,11 @@ const random_habitat_items = (habitat: HabitatWorld): HabitatItem[] => {
 };
 
 // TODO instead of updating data directly, create a list of events?
-export const simulate_island_habitat: SimulateHabitat = (habitat: HabitatWorld): HabitatState => {
+export const simulate_island_habitat: Simulate_Habitat = (
+	habitat: Habitat_World,
+): Habitat_State => {
 	const $state = get(habitat.state);
-	const next_state: HabitatState = {
+	const next_state: Habitat_State = {
 		tiles: $state.tiles,
 		items: [],
 	};
@@ -136,7 +138,7 @@ export const simulate_island_habitat: SimulateHabitat = (habitat: HabitatWorld):
 };
 
 // TODO needs to be refactored because it's slow and weird, see usage above
-const find_item_at = (items: HabitatItem[], x: number, y: number): HabitatItem | undefined => {
+const find_item_at = (items: Habitat_Item[], x: number, y: number): Habitat_Item | undefined => {
 	for (const item of items) {
 		if (item.x === x && item.y === y) {
 			return item;
@@ -146,11 +148,11 @@ const find_item_at = (items: HabitatItem[], x: number, y: number): HabitatItem |
 };
 
 export const random_habitat_item = (
-	habitat: HabitatWorld,
+	habitat: Habitat_World,
 	x: number,
 	y: number,
-	partial?: Partial<HabitatItem>,
-): HabitatItem => {
+	partial?: Partial<Habitat_Item>,
+): Habitat_Item => {
 	const age = partial?.age ?? random_int(0, 10, habitat.random);
 	const reproduction_age = 5;
 	const dust_duration = 5;
