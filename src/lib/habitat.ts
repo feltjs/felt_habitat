@@ -6,12 +6,12 @@ import {create_random_alea} from '@grogarden/util/random_alea.js';
 // TODO compute reproduction factor of trees (must be >min age and <max age for each species)
 // TODO add mountains and generate water from them
 
-export interface HabitatState {
-	tiles: HabitatTile[];
-	items: HabitatItem[];
+export interface Habitat_State {
+	tiles: Habitat_Tile[];
+	items: Habitat_Item[];
 }
 
-export interface HabitatItem {
+export interface Habitat_Item {
 	id: string;
 	x: number;
 	y: number;
@@ -24,7 +24,7 @@ export interface HabitatItem {
 	reproduction_age: number;
 }
 
-export interface HabitatTile {
+export interface Habitat_Tile {
 	id: string;
 	x: number;
 	y: number;
@@ -32,17 +32,17 @@ export interface HabitatTile {
 	char: string;
 }
 
-export interface CreateHabitatState {
-	(habitat: HabitatWorld): HabitatState;
+export interface Create_Habitat_State {
+	(habitat: Habitat_World): Habitat_State;
 }
-export interface SimulateHabitat {
-	(habitat: HabitatWorld): HabitatState;
+export interface Simulate_Habitat {
+	(habitat: Habitat_World): Habitat_State;
 }
 
-export class HabitatWorld {
+export class Habitat_World {
 	constructor(
-		protected create_habitat_state: CreateHabitatState,
-		protected simulate_habitat: SimulateHabitat,
+		protected create_habitat_state: Create_Habitat_State,
+		protected simulate_habitat: Simulate_Habitat,
 		tiles_wide = 10,
 		tiles_tall = 10,
 	) {
@@ -56,7 +56,7 @@ export class HabitatWorld {
 
 	tiles_wide: Writable<number>;
 	tiles_tall: Writable<number>;
-	state: Writable<HabitatState>;
+	state: Writable<Habitat_State>;
 
 	// how many times `simulate` has been called
 	turn = writable(0);
@@ -100,25 +100,25 @@ export class HabitatWorld {
 	}
 }
 
-export type HabitatMessage =
-	| StartHabitatMessage
-	| StopHabitatMessage
-	| ResetHabitatMessage
-	| NextTurnHabitatMessage
-	| SetStateHabitatMessage;
-export interface StartHabitatMessage {
+export type Habitat_Message =
+	| Start_Habitat_Message
+	| Stop_Habitat_Message
+	| Reset_Habitat_Message
+	| Next_Turn_Habitat_Message
+	| Set_State_Habitat_Message;
+export interface Start_Habitat_Message {
 	type: 'habitat.start';
 }
-export interface StopHabitatMessage {
+export interface Stop_Habitat_Message {
 	type: 'habitat.stop';
 }
-export interface ResetHabitatMessage {
+export interface Reset_Habitat_Message {
 	type: 'habitat.reset';
 }
-export interface NextTurnHabitatMessage {
+export interface Next_Turn_Habitat_Message {
 	type: 'habitat.next_turn';
 }
-export interface SetStateHabitatMessage {
+export interface Set_State_Habitat_Message {
 	type: 'habitat.update_state';
 	value: {
 		seed?: number | string;

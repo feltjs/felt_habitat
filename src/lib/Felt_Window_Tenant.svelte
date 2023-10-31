@@ -12,17 +12,17 @@
 	export let connect_on_mount = true;
 
 	// These are named the inverse of the equivalents in `Host`.
-	type SentMessage =
+	type Sent_Message =
 		| {type: 'felt.connect'; [key: string]: any}
 		| {type: string; [key: string]: any};
-	type ReceivedMessage =
+	type Received_Message =
 		| {type: 'felt.connected'; [key: string]: any}
 		| {type: string; [key: string]: any};
 
-	const dispatch = createEventDispatcher<{message: ReceivedMessage}>();
+	const dispatch = createEventDispatcher<{message: Received_Message}>();
 
 	// Exported for external usage.
-	export const post_message: (message: SentMessage) => void = (message) => {
+	export const post_message: (message: Sent_Message) => void = (message) => {
 		if (!host) return;
 		if (host instanceof ServiceWorker || host instanceof MessagePort) {
 			host.postMessage(message);

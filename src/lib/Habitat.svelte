@@ -1,9 +1,9 @@
 <script lang="ts">
-	import HabitatItem from '$lib/HabitatItem.svelte';
-	import HabitatTile from '$lib/HabitatTile.svelte';
-	import type {HabitatState} from '$lib/habitat.js';
+	import Habitat_Item from '$lib/Habitat_Item.svelte';
+	import Habitat_Tile from '$lib/Habitat_Tile.svelte';
+	import type {Habitat_State} from '$lib/habitat.js';
 
-	export let state: HabitatState;
+	export let state: Habitat_State;
 	export let tiles_wide: number;
 	export let tiles_tall: number;
 	export let displayWidth: number;
@@ -29,14 +29,14 @@
 	{#if show_tiles}
 		<div class="tiles">
 			{#each state.tiles as tile (tile.id)}
-				<HabitatTile {tile} tile_width={tile_size} tile_height={tile_size} />
+				<Habitat_Tile {tile} tile_width={tile_size} tile_height={tile_size} />
 			{/each}
 		</div>
 	{/if}
 	{#if show_items}
 		<div class="items">
 			{#each state.items as item (item.id)}
-				<HabitatItem {item} tile_width={tile_size} tile_height={tile_size} />
+				<Habitat_Item {item} tile_width={tile_size} tile_height={tile_size} />
 			{/each}
 		</div>
 	{/if}

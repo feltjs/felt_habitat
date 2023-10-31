@@ -65,14 +65,34 @@
     ]
   },
   "exports": {
-    "./EmojiMenu.svelte": {
-      "svelte": "./dist/EmojiMenu.svelte",
-      "default": "./dist/EmojiMenu.svelte",
-      "types": "./dist/EmojiMenu.svelte.d.ts"
+    "./Emoji_Menu.svelte": {
+      "svelte": "./dist/Emoji_Menu.svelte",
+      "default": "./dist/Emoji_Menu.svelte",
+      "types": "./dist/Emoji_Menu.svelte.d.ts"
+    },
+    "./Felt_Window_Tenant.svelte": {
+      "svelte": "./dist/Felt_Window_Tenant.svelte",
+      "default": "./dist/Felt_Window_Tenant.svelte",
+      "types": "./dist/Felt_Window_Tenant.svelte.d.ts"
     },
     "./grid.js": {
       "default": "./dist/grid.js",
       "types": "./dist/grid.d.ts"
+    },
+    "./Habitat_Item.svelte": {
+      "svelte": "./dist/Habitat_Item.svelte",
+      "default": "./dist/Habitat_Item.svelte",
+      "types": "./dist/Habitat_Item.svelte.d.ts"
+    },
+    "./Habitat_Tile.svelte": {
+      "svelte": "./dist/Habitat_Tile.svelte",
+      "default": "./dist/Habitat_Tile.svelte",
+      "types": "./dist/Habitat_Tile.svelte.d.ts"
+    },
+    "./Habitat_View.svelte": {
+      "svelte": "./dist/Habitat_View.svelte",
+      "default": "./dist/Habitat_View.svelte",
+      "types": "./dist/Habitat_View.svelte.d.ts"
     },
     "./Habitat.svelte": {
       "svelte": "./dist/Habitat.svelte",
@@ -82,21 +102,6 @@
     "./habitat.js": {
       "default": "./dist/habitat.js",
       "types": "./dist/habitat.d.ts"
-    },
-    "./HabitatItem.svelte": {
-      "svelte": "./dist/HabitatItem.svelte",
-      "default": "./dist/HabitatItem.svelte",
-      "types": "./dist/HabitatItem.svelte.d.ts"
-    },
-    "./HabitatTile.svelte": {
-      "svelte": "./dist/HabitatTile.svelte",
-      "default": "./dist/HabitatTile.svelte",
-      "types": "./dist/HabitatTile.svelte.d.ts"
-    },
-    "./HabitatView.svelte": {
-      "svelte": "./dist/HabitatView.svelte",
-      "default": "./dist/HabitatView.svelte",
-      "types": "./dist/HabitatView.svelte.d.ts"
     },
     "./island.js": {
       "default": "./dist/island.js",

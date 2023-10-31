@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HabitatView from '$lib/HabitatView.svelte';
+	import Habitat_View from '$lib/Habitat_View.svelte';
 </script>
 
-<HabitatView></HabitatView>
+<Habitat_View></Habitat_View>
