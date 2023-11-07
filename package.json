@@ -120,10 +120,6 @@
     "./package.js": {
       "default": "./dist/package.js",
       "types": "./dist/package.d.ts"
-    },
-    "./tile.js": {
-      "default": "./dist/tile.js",
-      "types": "./dist/tile.d.ts"
     }
   }
 }

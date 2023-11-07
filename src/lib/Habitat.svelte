@@ -6,13 +6,13 @@
 	export let state: Habitat_State;
 	export let tiles_wide: number;
 	export let tiles_tall: number;
-	export let displayWidth: number;
-	export let displayHeight: number;
+	export let display_width: number;
+	export let display_height: number;
 	export let show_tiles = true;
 	export let show_items = true;
 
-	$: tile_width_max = Math.floor(displayWidth / tiles_wide);
-	$: tile_height_max = Math.floor(displayHeight / tiles_tall);
+	$: tile_width_max = Math.floor(display_width / tiles_wide);
+	$: tile_height_max = Math.floor(display_height / tiles_tall);
 	$: tile_size = Math.min(tile_width_max, tile_height_max);
 	$: habitat_width = tiles_wide * tile_size;
 	$: habitat_height = tiles_tall * tile_size;

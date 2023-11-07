@@ -91,7 +91,6 @@ export const package_json = {
 		'./island.js': {default: './dist/island.js', types: './dist/island.d.ts'},
 		'./package.gen.js': {default: './dist/package.gen.js', types: './dist/package.gen.d.ts'},
 		'./package.js': {default: './dist/package.js', types: './dist/package.d.ts'},
-		'./tile.js': {default: './dist/tile.js', types: './dist/tile.d.ts'},
 	},
 	modules: {
 		'./Emoji_Menu.svelte': {path: 'Emoji_Menu.svelte', declarations: []},
@@ -102,6 +101,7 @@ export const package_json = {
 				{name: 'is_bordering', kind: 'VariableDeclaration'},
 				{name: 'is_in_bounds', kind: 'VariableDeclaration'},
 				{name: 'are_neighbors', kind: 'VariableDeclaration'},
+				{name: 'is_border_tile', kind: 'VariableDeclaration'},
 			],
 		},
 		'./Habitat_Item.svelte': {path: 'Habitat_Item.svelte', declarations: []},
@@ -137,10 +137,6 @@ export const package_json = {
 		'./package.js': {
 			path: 'package.ts',
 			declarations: [{name: 'package_json', kind: 'VariableDeclaration'}],
-		},
-		'./tile.js': {
-			path: 'tile.ts',
-			declarations: [{name: 'is_border_tile', kind: 'VariableDeclaration'}],
 		},
 	},
 } satisfies Package_Json;

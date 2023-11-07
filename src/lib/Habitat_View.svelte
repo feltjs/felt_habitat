@@ -150,11 +150,11 @@
 		};
 
 	const random_seed = () => {
-		let nextSeed;
+		let next_seed;
 		do {
-			nextSeed = random_int(SEED_MIN, SEED_MAX, habitat.random);
-		} while (nextSeed === $seed);
-		return nextSeed;
+			next_seed = random_int(SEED_MIN, SEED_MAX, habitat.random);
+		} while (next_seed === $seed);
+		return next_seed;
 	};
 </script>
 
@@ -167,8 +167,8 @@
 				state={$state}
 				{tiles_wide}
 				{tiles_tall}
-				displayWidth={habitat_width}
-				displayHeight={habitat_height}
+				display_width={habitat_width}
+				display_height={habitat_height}
 				{show_tiles}
 				{show_items}
 			/>
@@ -291,8 +291,8 @@
 	bind:post_message
 	on:message={(e) => {
 		console.log(`message from window host e`, e.detail);
-		const messageData = e.detail?.data;
-		if (messageData) {
+		const message_data = e.detail?.data;
+		if (message_data) {
 			handle_message(e.detail.data);
 		}
 	}}
