@@ -1,7 +1,7 @@
 {
   "name": "@feltjs/felt_habitat",
   "description": "a proof-of-concept Svelte component for collaborative simulated habitats using Felt",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "public": true,
   "icon": "🌵",
   "license": "Unlicense",
@@ -120,10 +120,6 @@
     "./package.js": {
       "default": "./dist/package.js",
       "types": "./dist/package.d.ts"
-    },
-    "./tile.js": {
-      "default": "./dist/tile.js",
-      "types": "./dist/tile.d.ts"
     }
   },
   "modules": {
@@ -148,6 +144,10 @@
         },
         {
           "name": "are_neighbors",
+          "kind": "VariableDeclaration"
+        },
+        {
+          "name": "is_border_tile",
           "kind": "VariableDeclaration"
         }
       ]
@@ -247,15 +247,6 @@
       "declarations": [
         {
           "name": "package_json",
-          "kind": "VariableDeclaration"
-        }
-      ]
-    },
-    "./tile.js": {
-      "path": "tile.ts",
-      "declarations": [
-        {
-          "name": "is_border_tile",
           "kind": "VariableDeclaration"
         }
       ]
