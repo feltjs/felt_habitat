@@ -1,0 +1,138 @@
+{
+  "name": "@feltjs/felt_habitat",
+  "version": "0.2.0",
+  "modules": {
+    "./Emoji_Menu.svelte": {
+      "path": "Emoji_Menu.svelte",
+      "declarations": []
+    },
+    "./Felt_Window_Tenant.svelte": {
+      "path": "Felt_Window_Tenant.svelte",
+      "declarations": []
+    },
+    "./grid.js": {
+      "path": "grid.ts",
+      "declarations": [
+        {
+          "name": "is_bordering",
+          "kind": "function"
+        },
+        {
+          "name": "is_in_bounds",
+          "kind": "function"
+        },
+        {
+          "name": "are_neighbors",
+          "kind": "function"
+        },
+        {
+          "name": "is_border_tile",
+          "kind": "function"
+        }
+      ]
+    },
+    "./Habitat_Item.svelte": {
+      "path": "Habitat_Item.svelte",
+      "declarations": []
+    },
+    "./Habitat_Tile.svelte": {
+      "path": "Habitat_Tile.svelte",
+      "declarations": []
+    },
+    "./Habitat_View.svelte": {
+      "path": "Habitat_View.svelte",
+      "declarations": []
+    },
+    "./Habitat.svelte": {
+      "path": "Habitat.svelte",
+      "declarations": []
+    },
+    "./habitat.js": {
+      "path": "habitat.ts",
+      "declarations": [
+        {
+          "name": "Habitat_State",
+          "kind": "type"
+        },
+        {
+          "name": "Habitat_Item",
+          "kind": "type"
+        },
+        {
+          "name": "Habitat_Tile",
+          "kind": "type"
+        },
+        {
+          "name": "Create_Habitat_State",
+          "kind": "type"
+        },
+        {
+          "name": "Simulate_Habitat",
+          "kind": "type"
+        },
+        {
+          "name": "Habitat_World",
+          "kind": "class"
+        },
+        {
+          "name": "Habitat_Message",
+          "kind": "type"
+        },
+        {
+          "name": "Start_Habitat_Message",
+          "kind": "type"
+        },
+        {
+          "name": "Stop_Habitat_Message",
+          "kind": "type"
+        },
+        {
+          "name": "Reset_Habitat_Message",
+          "kind": "type"
+        },
+        {
+          "name": "Next_Turn_Habitat_Message",
+          "kind": "type"
+        },
+        {
+          "name": "Set_State_Habitat_Message",
+          "kind": "type"
+        }
+      ]
+    },
+    "./island.js": {
+      "path": "island.ts",
+      "declarations": [
+        {
+          "name": "create_island_habitat_state",
+          "kind": "variable"
+        },
+        {
+          "name": "simulate_island_habitat",
+          "kind": "variable"
+        },
+        {
+          "name": "random_habitat_item",
+          "kind": "function"
+        }
+      ]
+    },
+    "./package.gen.js": {
+      "path": "package.gen.ts",
+      "declarations": []
+    },
+    "./package.js": {
+      "path": "package.ts",
+      "declarations": [
+        {
+          "name": "package_json",
+          "kind": "variable"
+        },
+        {
+          "name": "src_json",
+          "kind": "variable"
+        }
+      ]
+    }
+  }
+}

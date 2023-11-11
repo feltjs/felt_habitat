@@ -29,22 +29,22 @@
   "devDependencies": {
     "@changesets/changelog-git": "^0.1.14",
     "@feltjs/eslint-config": "^0.4.1",
-    "@fuz.dev/fuz": "^0.79.3",
+    "@fuz.dev/fuz": "^0.80.0",
     "@fuz.dev/fuz_contextmenu": "^0.6.0",
     "@fuz.dev/fuz_dialog": "^0.5.0",
-    "@grogarden/gro": "^0.101.0",
+    "@grogarden/gro": "^0.102.0",
     "@grogarden/util": "^0.16.0",
     "@sveltejs/adapter-static": "^2.0.3",
-    "@sveltejs/kit": "^1.27.3",
+    "@sveltejs/kit": "^1.27.4",
     "@sveltejs/package": "^2.2.2",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
     "eslint-plugin-svelte": "^2.35.0",
     "prettier": "^3.0.3",
-    "prettier-plugin-svelte": "^3.0.3",
-    "svelte": "^4.2.2",
-    "svelte-check": "^3.5.2",
+    "prettier-plugin-svelte": "^3.1.0",
+    "svelte": "^4.2.3",
+    "svelte-check": "^3.6.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "uvu": "^0.5.6"
@@ -120,136 +120,6 @@
     "./package.js": {
       "default": "./dist/package.js",
       "types": "./dist/package.d.ts"
-    }
-  },
-  "modules": {
-    "./Emoji_Menu.svelte": {
-      "path": "Emoji_Menu.svelte",
-      "declarations": []
-    },
-    "./Felt_Window_Tenant.svelte": {
-      "path": "Felt_Window_Tenant.svelte",
-      "declarations": []
-    },
-    "./grid.js": {
-      "path": "grid.ts",
-      "declarations": [
-        {
-          "name": "is_bordering",
-          "kind": "function"
-        },
-        {
-          "name": "is_in_bounds",
-          "kind": "function"
-        },
-        {
-          "name": "are_neighbors",
-          "kind": "function"
-        },
-        {
-          "name": "is_border_tile",
-          "kind": "function"
-        }
-      ]
-    },
-    "./Habitat_Item.svelte": {
-      "path": "Habitat_Item.svelte",
-      "declarations": []
-    },
-    "./Habitat_Tile.svelte": {
-      "path": "Habitat_Tile.svelte",
-      "declarations": []
-    },
-    "./Habitat_View.svelte": {
-      "path": "Habitat_View.svelte",
-      "declarations": []
-    },
-    "./Habitat.svelte": {
-      "path": "Habitat.svelte",
-      "declarations": []
-    },
-    "./habitat.js": {
-      "path": "habitat.ts",
-      "declarations": [
-        {
-          "name": "Habitat_State",
-          "kind": "type"
-        },
-        {
-          "name": "Habitat_Item",
-          "kind": "type"
-        },
-        {
-          "name": "Habitat_Tile",
-          "kind": "type"
-        },
-        {
-          "name": "Create_Habitat_State",
-          "kind": "type"
-        },
-        {
-          "name": "Simulate_Habitat",
-          "kind": "type"
-        },
-        {
-          "name": "Habitat_World",
-          "kind": "class"
-        },
-        {
-          "name": "Habitat_Message",
-          "kind": "type"
-        },
-        {
-          "name": "Start_Habitat_Message",
-          "kind": "type"
-        },
-        {
-          "name": "Stop_Habitat_Message",
-          "kind": "type"
-        },
-        {
-          "name": "Reset_Habitat_Message",
-          "kind": "type"
-        },
-        {
-          "name": "Next_Turn_Habitat_Message",
-          "kind": "type"
-        },
-        {
-          "name": "Set_State_Habitat_Message",
-          "kind": "type"
-        }
-      ]
-    },
-    "./island.js": {
-      "path": "island.ts",
-      "declarations": [
-        {
-          "name": "create_island_habitat_state",
-          "kind": "variable"
-        },
-        {
-          "name": "simulate_island_habitat",
-          "kind": "variable"
-        },
-        {
-          "name": "random_habitat_item",
-          "kind": "function"
-        }
-      ]
-    },
-    "./package.gen.js": {
-      "path": "package.gen.ts",
-      "declarations": []
-    },
-    "./package.js": {
-      "path": "package.ts",
-      "declarations": [
-        {
-          "name": "package_json",
-          "kind": "variable"
-        }
-      ]
     }
   }
 }
