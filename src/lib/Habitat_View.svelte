@@ -196,16 +196,18 @@
 			</fieldset>
 			<fieldset>
 				<label class="seed-label">
-					seed
-					<input
-						type="range"
-						value={$seed}
-						on:input={on_mumber_input('seed')}
-						step={1}
-						min={SEED_MIN}
-						max={SEED_MAX}
-					/>
-					<input type="text" value={$seed} on:input={on_text_input('seed')} />
+					<div class="title">seed</div>
+					<div class="row">
+						<input
+							type="range"
+							value={$seed}
+							on:input={on_mumber_input('seed')}
+							step={1}
+							min={SEED_MIN}
+							max={SEED_MAX}
+						/>
+						<input type="text" value={$seed} on:input={on_text_input('seed')} />
+					</div>
 				</label>
 				<button
 					type="button"
@@ -216,57 +218,87 @@
 				</button>
 			</fieldset>
 			<label>
-				turn duration
-				<input
-					type="range"
-					value={turn_duration}
-					on:input={on_mumber_input('turn_duration')}
-					step={1000 / 60}
-					min={TURN_DURATION_MIN}
-					max={TURN_DURATION_MAX}
-				/>
-				<input type="number" value={turn_duration} on:input={on_mumber_input('turn_duration')} />
+				<div class="title">turn duration</div>
+				<div class="row">
+					<input
+						type="range"
+						value={turn_duration}
+						on:input={on_mumber_input('turn_duration')}
+						step={1000 / 60}
+						min={TURN_DURATION_MIN}
+						max={TURN_DURATION_MAX}
+					/>
+					<input
+						type="number"
+						value={turn_duration}
+						on:input={on_mumber_input('turn_duration')}
+						step={1000 / 60}
+						min={TURN_DURATION_MIN}
+						max={TURN_DURATION_MAX}
+					/>
+				</div>
 			</label>
 			<label>
-				reproduction rate
-				<input
-					type="range"
-					value={$reproduction}
-					on:input={on_mumber_input('reproduction_rate')}
-					step={0.01}
-					min={0}
-					max={1}
-				/>
-				<input
-					type="number"
-					value={$reproduction}
-					on:input={on_mumber_input('reproduction_rate')}
-				/>
+				<div class="title">reproduction rate</div>
+				<div class="row">
+					<input
+						type="range"
+						value={$reproduction}
+						on:input={on_mumber_input('reproduction_rate')}
+						step={0.01}
+						min={0}
+						max={1}
+					/>
+					<input
+						type="number"
+						value={$reproduction}
+						on:input={on_mumber_input('reproduction_rate')}
+						step={0.01}
+						min={0}
+						max={1}
+					/>
+				</div>
 			</label>
-			<label>
-				tiles wide
-				<input
-					type="range"
-					value={tiles_wide}
-					on:input={on_mumber_input('tiles_wide')}
-					step={1}
-					min={tiles_wide_min}
-					max={tiles_wide_max}
-				/>
-				<input type="number" value={tiles_wide} on:input={on_mumber_input('tiles_wide')} />
-			</label>
-			<label>
-				tiles tall
-				<input
-					type="range"
-					value={tiles_tall}
-					on:input={on_mumber_input('tiles_tall')}
-					step={1}
-					min={tiles_tall_min}
-					max={tiles_tall_max}
-				/>
-				<input type="number" value={tiles_tall} on:input={on_mumber_input('tiles_tall')} />
-			</label>
+			<fieldset class="row">
+				<label>
+					<div class="title">tiles wide</div>
+					<input
+						type="range"
+						value={tiles_wide}
+						on:input={on_mumber_input('tiles_wide')}
+						step={1}
+						min={tiles_wide_min}
+						max={tiles_wide_max}
+					/>
+					<input
+						type="number"
+						value={tiles_wide}
+						on:input={on_mumber_input('tiles_wide')}
+						step={1}
+						min={tiles_wide_min}
+						max={tiles_wide_max}
+					/>
+				</label>
+				<label>
+					<div class="title">tiles tall</div>
+					<input
+						type="range"
+						value={tiles_tall}
+						on:input={on_mumber_input('tiles_tall')}
+						step={1}
+						min={tiles_tall_min}
+						max={tiles_tall_max}
+					/>
+					<input
+						type="number"
+						value={tiles_tall}
+						on:input={on_mumber_input('tiles_tall')}
+						step={1}
+						min={tiles_tall_min}
+						max={tiles_tall_max}
+					/>
+				</label>
+			</fieldset>
 			<fieldset class="row">
 				<label>
 					<input type="checkbox" checked={show_tiles} on:input={on_checkbox('show_tiles')} />
